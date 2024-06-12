@@ -1,3 +1,5 @@
+## This is based on the original version by [Headline](https://github.com/Headline). The code provided here *should* be up to date, and otherwise relatively match his original project.
+
 # Discord-IRC-Relay
 ![thing](https://i.gyazo.com/2add2e5f5c56abe66b63564e71c4152c.gif)
 
