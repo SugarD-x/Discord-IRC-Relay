@@ -29,7 +29,7 @@ namespace IRCRelay
         public static void Main(string[] args)
         {
             dynamic config = null;
-            Console.Title = "Discord IRC Relay (c) Michael Flaherty 2018";
+            Console.Title = "Discord IRC Relay (c) Michael Flaherty 2024";
             try
             {
                 config = Config.ApplyJson(new StreamReader("settings.json").ReadToEnd(), new ConfigObject());

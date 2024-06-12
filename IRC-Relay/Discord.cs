@@ -53,8 +53,9 @@ namespace IRCRelay
 
             var socketConfig = new DiscordSocketConfig
             {
-                WebSocketProvider = WS4NetProvider.Instance,
-                LogLevel = LogSeverity.Critical
+//                WebSocketProvider = WS4NetProvider.Instance,
+                LogLevel = LogSeverity.Critical,
+                GatewayIntents = GatewayIntents.AllUnprivileged | GatewayIntents.MessageContent
             };
 
             client = new DiscordSocketClient(socketConfig);
@@ -105,7 +106,7 @@ namespace IRCRelay
 
             if (message.Author.Id == client.CurrentUser.Id) return; // block self
 
-            if (!messageParam.Channel.Name.Contains(config.DiscordChannelName)) return; // only relay trough specified channels
+            if (!messageParam.Channel.Name.Contains(config.DiscordChannelName)) return; // only relay through specified channels
             if (messageParam.Content.Contains("__NEVER_BE_SENT_PLEASE")) return; // don't break me
 
             if (Program.HasMember(config, "DiscordUserIDBlacklist")) //bcompat for older configurations
